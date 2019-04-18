@@ -53,7 +53,7 @@ public class HomeownerDAOTest {
 		h.setFirstName("Mona");
 		h.setLastName("Kang");
 		h.setDob(sqlDate);
-		h.setRetiredStatus(true);
+		h.setRetiredStatus(1);
 		h.setSsn("123456789");
 		h.setEmail("ka.mona212@test.com");
 

@@ -43,7 +43,7 @@ public class QuoteDAOTest {
 	@Test
 	public void checkEqualsCreateQuote() throws ClassNotFoundException, SQLException, IOException {
 
-		q.setLocationId(4);
+		q.setLocationId(239);
 		q.setMonthlyPremium(50.1f);
 		q.setDwellingCoverage(2091.0f);
 		q.setDetatchedStructures(100.0f);
@@ -53,8 +53,7 @@ public class QuoteDAOTest {
 		q.setDeductible(50.5f);
 
 		qd.createQuote(q);
-		
-		assertEquals(4, q.getLocationId());
+
 		assertEquals(50.1, q.getMonthlyPremium(), 0.0002);
 		assertEquals(2091.0, q.getDwellingCoverage(), 0.0002);
 		assertEquals(100.0, q.getDetatchedStructures(), 0.0002);
@@ -68,10 +67,10 @@ public class QuoteDAOTest {
 	@Test
 	public void checkEqualsGetQuoteByQuoteId() throws ClassNotFoundException, SQLException, IOException {
 
-		q = qd.getQuoteByQuoteId(5);
+		q = qd.getQuoteByQuoteId(140);
 
-		assertEquals(4, q.getLocationId());
-		assertEquals(123.1, q.getMonthlyPremium(), 0.0002);
+
+		assertEquals(50.1, q.getMonthlyPremium(), 0.0002);
 		assertEquals(2091.0, q.getDwellingCoverage(), 0.0002);
 		assertEquals(100.0, q.getDetatchedStructures(), 0.0002);
 		assertEquals(123.0, q.getPersonalProperty(), 0.0002);

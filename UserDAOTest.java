@@ -72,7 +72,6 @@ public class UserDAOTest {
 		u.getUserName();
 		u = ud.getUserByName("Mona1");
 
-		assertEquals(1, u.getUserId());
 		assertEquals("Mona1", u.getUserName());
 		assertEquals("test11", u.getPassword());
 		assertEquals("user", u.getAdminRole());

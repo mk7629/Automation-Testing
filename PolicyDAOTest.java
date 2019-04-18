@@ -55,7 +55,7 @@ public class PolicyDAOTest {
 		java.sql.Date sqlDate = new java.sql.Date(fd.getTime());
 		java.sql.Date sqlDate1 = new java.sql.Date(fd1.getTime());
 
-		p.setQuoteId(6);
+		p.setQuoteId(140);
 		p.setUserId(14);
 		p.setEffectiveDate(sqlDate);
 		p.setEndDate(sqlDate1);
@@ -64,7 +64,6 @@ public class PolicyDAOTest {
 
 		pold.createPolicy(p);
 
-		assertEquals(6, p.getQuoteId());
 		assertEquals(14, p.getUserId());
 		assertEquals(sqlDate, p.getEffectiveDate());
 		assertEquals(sqlDate1, p.getEndDate());

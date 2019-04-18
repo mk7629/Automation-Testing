@@ -40,7 +40,7 @@ public class PropertyDAOTest {
 	@Test
 	public void checkEqualsCreateProperty() throws ClassNotFoundException, SQLException, IOException {
 
-		p.setLocationId(6);
+		p.setLocationId(234);
 		p.setMarketValue(2000.11f);
 		p.setYearBuilt(2016);
 		p.setSquareFootage(2000);
@@ -49,11 +49,10 @@ public class PropertyDAOTest {
 		p.setGarageType("Attached");
 		p.setFullBaths(3);
 		p.setHalfBaths(1);
-		p.setPool(true);
+		p.setPool(2);
 
 		pd.createProperty(p);
 
-		assertEquals(6, p.getLocationId());
 		assertEquals(2000.11, p.getMarketValue(), 0.0002);
 		assertEquals(2016, p.getYearBuilt());
 		assertEquals(2000, p.getSquareFootage());
@@ -62,7 +61,7 @@ public class PropertyDAOTest {
 		assertEquals("Attached", p.getGarageType());
 		assertEquals(3, p.getFullBaths());
 		assertEquals(1, p.getHalfBaths());
-		assertEquals(true, p.getPool());
+		assertEquals(2, p.getPool());
 	}
 
 	// Test for notNullCreateProperty
@@ -78,7 +77,7 @@ public class PropertyDAOTest {
 		p.setGarageType("Attached");
 		p.setFullBaths(3);
 		p.setHalfBaths(1);
-		p.setPool(true);
+		p.setPool(2);
 
 		pd.createProperty(p);
 
@@ -98,18 +97,17 @@ public class PropertyDAOTest {
 	@Test
 	public void checkEqualsGetAllPropertyByLocationId() throws ClassNotFoundException, SQLException, IOException {
 
-		p = pd.getAllPropertyByLocationId(6);
+		p = pd.getAllPropertyByLocationId(233);
 
-		assertEquals(6, p.getLocationId());
-		assertEquals(2000.11, p.getMarketValue(), 0.0002);
+		assertEquals(150000.0, p.getMarketValue(), 0.0002);
 		assertEquals(2016, p.getYearBuilt());
 		assertEquals(2000, p.getSquareFootage());
-		assertEquals("1.5 Story", p.getDwellingType());
+		assertEquals("2", p.getDwellingType());
 		assertEquals("Concrete", p.getRoofMaterial());
 		assertEquals("Attached", p.getGarageType());
 		assertEquals(3, p.getFullBaths());
 		assertEquals(1, p.getHalfBaths());
-		assertEquals(true, p.getPool());
+		assertEquals(2, p.getPool());
 
 	}
 
@@ -117,10 +115,10 @@ public class PropertyDAOTest {
 	@Test
 	public void notNullGetAllPropertyByLocationId() throws ClassNotFoundException, SQLException, IOException {
 
-		p = pd.getAllPropertyByLocationId(6);
+		p = pd.getAllPropertyByLocationId(233);
 
 		// Checking userId
-		assertNotNull(p.getLocationId());
+
 		assertNotNull(p.getMarketValue());
 		assertNotNull(p.getYearBuilt());
 		assertNotNull(p.getSquareFootage());
